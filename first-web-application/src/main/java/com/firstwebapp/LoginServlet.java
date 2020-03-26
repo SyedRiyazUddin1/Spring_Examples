@@ -1,3 +1,4 @@
+//Creating a web application "Login-page" using JSP and servlets, and validating the credentials
 package com.firstwebapp;
 
 import java.io.IOException;
