@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>SpringMVC-MyHome</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <absolute-ordering/>
+  
+  <!-- With the help of load-on-startup tag, the dispatcherServlet
+   get initialized (DS class object will get created) when we start the server -->
+  <servlet>
+  <servlet-name>dad-frontcontroller</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  
+  <!-- If we want to change the servlet config file name -->
+  <init-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>/WEB-INF/beans.xml</param-value>
+  
+  </init-param>
+  <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- when the DS gets initialized, spring framework will look for a Dispatcher servlet 
+  with appended with "-servlet" file  and the DS will also create the object of WebApplicationContext-->
+  
+  <servlet-mapping>
+  <servlet-name>dad-frontcontroller</servlet-name>
+  <url-pattern>/home.com/*</url-pattern>
+  </servlet-mapping>
+</web-app>
