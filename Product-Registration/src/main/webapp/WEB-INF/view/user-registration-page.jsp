@@ -13,13 +13,15 @@
 
 	<h1 align="center">Please register your product here</h1>
 	<hr>
-
+ 
 	<form:form action="registration-success" method="GET" modelAttribute="userReg">
 	
 	<div align="center">
 
-		<label>Product Name</label>
+		<label> Product Name :</label>
 		<form:input path="productName" />
+		<form:errors path="productName"/>
+		
 		
 		<br/>
 		
@@ -45,10 +47,10 @@
 		<br />
 
 		<label>Product's Features : </label>
-		2gb ram : <form:checkbox path="features" value="2gb ram" />
-		4gb ram : <form:checkbox path="features" value="4gb ram" />
-	6gb ram : <form:checkbox path="features" value="6gb ram" />
-		8gb ram : <form:checkbox path="features" value="8gb ram" />
+		<form:radiobutton path="features" value="2gb ram" />2gb ram
+		<form:radiobutton path="features" value="4gb ram" />4gb ram
+	    <form:radiobutton path="features" value="6gb ram" />6gb ram
+		<form:radiobutton path="features" value="8gb ram" />8gb ram
 		
 		<br />
 		
