@@ -15,6 +15,7 @@
 	<h2>The details of your product are :</h2>
 
 	<br /> Product Name : ${userReg.productName}
+	<br /> Product ID : ${userReg.productId}
 	<br /> Product price : ${userReg.price}
 	<br /> Product Company : ${userReg.productCompany}
 	<br /> Country Name : ${userReg.countryName}
