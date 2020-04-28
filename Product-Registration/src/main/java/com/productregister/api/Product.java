@@ -1,5 +1,8 @@
 package com.productregister.api;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Product {
 
 	// @NotBlank(message = "* Product Name cannot be blank")

@@ -11,7 +11,6 @@ import com.productregister.service.ProductService;
 @Controller
 public class RegistrationController {
 
-	@Autowired
 	ProductService productService;
 
 	@RequestMapping("/register")
