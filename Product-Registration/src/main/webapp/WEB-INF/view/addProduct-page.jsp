@@ -11,10 +11,10 @@
 <body>
 
 
-	<h1 align="center">Please register your product here</h1>
+	<h1 align="center">Please add your product here</h1>
 	<hr>
  
-	<form:form action="registration-success" method="GET" modelAttribute="userReg">
+	<form:form action="registration-success" method="post" modelAttribute="userReg">
 	
 	<div align="center">
 
@@ -34,6 +34,8 @@
 		<form:input path="price" />
 
 		<br />
+		
+		
 
 		<label>Manufacturer Name</label>
 		<form:input path="productCompany" />
@@ -43,10 +45,10 @@
 
 		<label>Manufacturer's Country : </label>
 		<form:select path="countryName">
-			<form:option value="Ind" label="India"></form:option>
-			<form:option value="Usa" label="United State"></form:option>
-			<form:option value="Pak" label="Pakistan"></form:option>
-			<form:option value="Sl" label="Srilanka"></form:option>
+			<form:option value="India" label="India"></form:option>
+			<form:option value="USA" label="United State"></form:option>
+			<form:option value="Pakistan" label="Pakistan"></form:option>
+			<form:option value="Srilanka" label="Srilanka"></form:option>
 		</form:select>
 
 		<br />

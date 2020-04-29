@@ -12,7 +12,7 @@ import com.productregister.dao.ProductDAOImpl;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.productregister.controllers")
+@ComponentScan(basePackages = "com.productregister.*")
 public class AppConfig {
 
 	// setting up the ViewResolver
@@ -29,7 +29,7 @@ public class AppConfig {
 	@Bean
 	DriverManagerDataSource getDataSource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
-		ds.setDriverClassName("com.mysql.jdbc.Driver");
+		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		ds.setUrl("jdbc:mysql://localhost:3306/mydatabase");
 		ds.setUsername("root");
 		ds.setPassword("root");
@@ -37,10 +37,5 @@ public class AppConfig {
 		return ds;
 	}
 
-	// instantiating the ProductDAO
-	@Bean
-	public ProductDAO getProductDao() {
-		return new ProductDAOImpl(getDataSource());
-	}
 
 }

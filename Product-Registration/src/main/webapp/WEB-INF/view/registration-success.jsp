@@ -10,13 +10,14 @@
 </head>
 <body>
 
-	<h1>Your product is registered successfully !!</h1>
+	<h1>Your product is added successfully !!</h1>
 
 	<h2>The details of your product are :</h2>
 
 	<br /> Product Name : ${userReg.productName}
 	<br /> Product ID : ${userReg.productId}
 	<br /> Product price : ${userReg.price}
+	<br /> Product Final price (with tax): ${userReg.finalPrice}
 	<br /> Product Company : ${userReg.productCompany}
 	<br /> Country Name : ${userReg.countryName}
 	<br /> Features : ${userReg.features}

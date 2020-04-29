@@ -1,14 +1,11 @@
 package com.productregister.api;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Product {
 
 	// @NotBlank(message = "* Product Name cannot be blank")
 	private String productName;
 	private int productId;
-	private int price;
+	private double price;
 	private String productCompany;
 	private String countryName;
 	private String features;
@@ -73,11 +70,11 @@ public class Product {
 		this.countryName = countryName;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
