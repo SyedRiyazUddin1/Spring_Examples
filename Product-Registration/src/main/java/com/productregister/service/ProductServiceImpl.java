@@ -1,5 +1,7 @@
 package com.productregister.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,13 @@ public class ProductServiceImpl implements ProductService {
 		product.setTax(tax);
 		product.setFinalPrice(finalPrice);
 	}
+
+	@Override
+	public List<Product> getProducts() {
+		
+	return productDAO.getProducts();
+	}
+
+
 
 }

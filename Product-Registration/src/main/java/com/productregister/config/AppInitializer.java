@@ -13,7 +13,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 			return null;
 		}
 
-		//setting up configuration class
+		//setting up configuration class	
 		@Override
 		protected Class<?>[] getServletConfigClasses() {
 			
