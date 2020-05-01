@@ -9,7 +9,6 @@
 <br/>
 <br/>
 
-	
 	<a href="/Product-Registration/viewProducts-page">Click here to view all the products</a>
 
 </body>

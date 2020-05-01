@@ -21,6 +21,8 @@
 			<th>Country Name</th>
 			<th>Features</th>
 			<th>Product Final price</th>
+			<th>Edit</th>
+			<th>Delete</th>
 
 		</tr>
 		<c:forEach var="product" items="${list}">
@@ -32,8 +34,11 @@
 				<td>${product.countryName}</td>
 				<td>${product.features}</td>
 				<td>${product.finalPrice}</td>
-				
-				
+				<td><a href="/Product-Registration/editProduct/${product.productId }">Edit</a></td>
+				<td><a href="deleteProduct/${product.productId}">Delete</a></td>
+
+
+
 			</tr>
 		</c:forEach>
 	</table>

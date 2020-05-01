@@ -38,6 +38,24 @@ public class ProductServiceImpl implements ProductService {
 	return productDAO.getProducts();
 	}
 
+	@Override
+	public int editProduct(Product product) {
+		
+		return productDAO.editProduct(product);
+	}
+
+	@Override
+	public Product getProductById(int id) {
+		
+		return productDAO.getProductById(id);
+	}
+
+//	@Override
+//	public int saveOrUpdate(Product product) {
+//		// TODO Auto-generated method stub
+//		return productDAO.saveOrUpdate(product);
+//	}
+
 
 
 }

@@ -5,8 +5,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper; 
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 import com.productregister.api.Product;
@@ -47,12 +48,10 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public List<Product> getProducts() {
 		return jdbcTemplate.query("select * from productdetails", new RowMapper<Product>() {
-			
-			
-			
+
 			public Product mapRow(ResultSet rs, int row) throws SQLException {
 				Product product = new Product();
-				
+
 				product.setProductName(rs.getString(1));
 				product.setProductId(rs.getInt(2));
 				product.setPrice(rs.getDouble(3));
@@ -60,10 +59,47 @@ public class ProductDAOImpl implements ProductDAO {
 				product.setCountryName(rs.getString(5));
 				product.setFeatures(rs.getString(6));
 				product.setFinalPrice(rs.getDouble(7));
-				
 
 				return product;
 			}
 		});
 	}
+
+	@Override
+	public int editProduct(Product product) {
+		String sql = "update productdetails set productName='" + product.getProductName() + "',price ='"
+				+ product.getPrice() + "',productCompany='" + product.getProductCompany() + "',countryName='"
+				+ product.getCountryName() + "',features='" + product.getFeatures() + "',finalPrice='"
+				+ product.getFinalPrice() + "' where productId=" + product.getProductId() + "";
+
+		return jdbcTemplate.update(sql);
+	}
+
+	@Override
+	public Product getProductById(int productId) {
+		String sql = "select * from productdetails where productId=?";
+		return jdbcTemplate.queryForObject(sql, new Object[] { productId },
+				new BeanPropertyRowMapper<Product>(Product.class));
+
+	}
+
+
+//	@Override
+//	public int saveOrUpdate(Product product) {
+//		if (product.getProductId() > 0) {
+//			// update
+//			String sql = "UPDATE productdetails SET productName=?, productPrice=?, productCompany=?,countryName=?, features=?, finalPrice=?"
+//					+ " WHERE contact_id=?";
+//			jdbcTemplate.update(sql, product.getProductName(), product.getPrice(), product.getProductCompany(),
+//					product.getCountryName(), product.getFeatures(), product.getFinalPrice());
+//		} else {
+//			// insert
+//			String sql = "INSERT INTO contact (productName,productPrice, productCompany,countryName, features, finalPrice)" + " VALUES (?, ?, ?, ?,?,?)";
+//			jdbcTemplate.update(sql, product.getProductName(), product.getPrice(), product.getProductCompany(),
+//					product.getCountryName(), product.getFeatures(), product.getFinalPrice());
+//		}
+//		return 0;
+
+	// }
+
 }
