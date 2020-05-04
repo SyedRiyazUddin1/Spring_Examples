@@ -11,6 +11,9 @@
 </head>
 <body>
 
+	
+	<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
+	
 	<h1>Products List</h1>
 	<table border="2" width="70%" cellpadding="2">
 		<tr>
@@ -35,7 +38,7 @@
 				<td>${product.features}</td>
 				<td>${product.finalPrice}</td>
 				<td><a href="/Product-Registration/editProduct/${product.productId }">Edit</a></td>
-				<td><a href="deleteProduct/${product.productId}">Delete</a></td>
+				<td><a href="/Product-Registration/deleteProduct/${product.productId}">Delete</a></td>
 
 
 

@@ -10,7 +10,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
-import com.productregister.api.Product;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.productregister.model.Product;
 
 @Component
 public class ProductDAOImpl implements ProductDAO {
@@ -83,23 +86,11 @@ public class ProductDAOImpl implements ProductDAO {
 
 	}
 
+	@Override
+	public int deleteProduct(int productId) {
 
-//	@Override
-//	public int saveOrUpdate(Product product) {
-//		if (product.getProductId() > 0) {
-//			// update
-//			String sql = "UPDATE productdetails SET productName=?, productPrice=?, productCompany=?,countryName=?, features=?, finalPrice=?"
-//					+ " WHERE contact_id=?";
-//			jdbcTemplate.update(sql, product.getProductName(), product.getPrice(), product.getProductCompany(),
-//					product.getCountryName(), product.getFeatures(), product.getFinalPrice());
-//		} else {
-//			// insert
-//			String sql = "INSERT INTO contact (productName,productPrice, productCompany,countryName, features, finalPrice)" + " VALUES (?, ?, ?, ?,?,?)";
-//			jdbcTemplate.update(sql, product.getProductName(), product.getPrice(), product.getProductCompany(),
-//					product.getCountryName(), product.getFeatures(), product.getFinalPrice());
-//		}
-//		return 0;
-
-	// }
+		String sql = "delete from productdetails where productId=" + productId + "";
+		return jdbcTemplate.update(sql);
+	}
 
 }

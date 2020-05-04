@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.productregister.api.Product;
+import com.productregister.model.Product;
 import com.productregister.service.ProductService;
 
 @Controller
@@ -45,6 +45,7 @@ public class RegistrationController {
 	/* It displays object data into form for the given id.   
      * The @PathVariable puts URL data into variable.*/  
 	
+	
     @RequestMapping(value="/editProduct/{productId}")    
     public String edit(@PathVariable int productId, Model model){    
         Product product= productService.getProductById(productId);    
@@ -56,6 +57,14 @@ public class RegistrationController {
 	@RequestMapping(value="/editProduct",method = RequestMethod.GET)    
     public String editProduct(@ModelAttribute("product") Product product){    
        productService.editProduct(product);   
+        return "redirect:/viewProducts-page";    
+    }
+	
+	
+	 /* It deletes record for the given id in URL and redirects to /viewProducts-page */    
+    @RequestMapping(value="/deleteProduct/{productId}",method = RequestMethod.GET)    
+    public String delete(@PathVariable int productId){    
+       productService.deleteProduct(productId);   
         return "redirect:/viewProducts-page";    
     }
 }

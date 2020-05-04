@@ -60,8 +60,7 @@
 		<form:radiobutton path="features" value="8gb ram" />8gb ram
 		
 		<br />
-		
-		
+		<br />
 		<input type="submit" value="register">
 		
 		</div>
@@ -72,7 +71,8 @@
 	</form:form>
 
 
-
+<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
+	
 
 
 

@@ -10,6 +10,9 @@
 </head>
 <body>
 
+<br /> <a href="/Product-Registration/index.jsp">  <-- Go back to HomePage </a>
+
+
 	<h1>Your product is added successfully !!</h1>
 
 	<h2>The details of your product are :</h2>
@@ -21,6 +24,11 @@
 	<br /> Product Company : ${userReg.productCompany}
 	<br /> Country Name : ${userReg.countryName}
 	<br /> Features : ${userReg.features}
+	<br />
+	<br />
+	
+	
+
 
 
 </body>

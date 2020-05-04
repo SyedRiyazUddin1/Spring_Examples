@@ -2,7 +2,7 @@ package com.productregister.dao;
 
 import java.util.List;
 
-import com.productregister.api.Product;
+import com.productregister.model.Product;
 
 public interface ProductDAO {
 
@@ -16,5 +16,7 @@ public interface ProductDAO {
 	public int editProduct(Product product);
 	
 	public Product getProductById(int id);
+
+	public int deleteProduct(int productId);
 
 }
