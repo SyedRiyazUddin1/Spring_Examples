@@ -66,5 +66,8 @@ public class RegistrationController {
     public String delete(@PathVariable int productId){    
        productService.deleteProduct(productId);   
         return "redirect:/viewProducts-page";    
+        
+        
+        
     }
 }

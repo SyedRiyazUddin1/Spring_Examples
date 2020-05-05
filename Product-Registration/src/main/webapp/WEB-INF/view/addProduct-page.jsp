@@ -71,7 +71,6 @@
 	</form:form>
 
 
-<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
 	
 
 

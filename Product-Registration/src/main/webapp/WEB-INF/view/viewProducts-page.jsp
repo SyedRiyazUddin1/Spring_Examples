@@ -11,9 +11,8 @@
 </head>
 <body>
 
-	
-	<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
-	
+
+
 	<h1>Products List</h1>
 	<table border="2" width="70%" cellpadding="2">
 		<tr>
@@ -27,24 +26,43 @@
 			<th>Edit</th>
 			<th>Delete</th>
 
-		</tr>
+		</tr> 
 		<c:forEach var="product" items="${list}">
+		
 			<tr>
 				<td>${product.productName}</td>
-				<td>${product.productId}</td>
+				<td><a
+					href="/Product-Registration/editProduct/${product.productId }">${product.productId }</a></td>
 				<td>${product.price}</td>
 				<td>${product.productCompany}</td>
 				<td>${product.countryName}</td>
 				<td>${product.features}</td>
 				<td>${product.finalPrice}</td>
-				<td><a href="/Product-Registration/editProduct/${product.productId }">Edit</a></td>
-				<td><a href="/Product-Registration/deleteProduct/${product.productId}">Delete</a></td>
+				<td><a
+					href="/Product-Registration/editProduct/${product.productId }">Edit</a></td>
+				<td><a
+					href="/Product-Registration/deleteProduct/${product.productId}">Delete</a></td>
 
 
 
 			</tr>
 		</c:forEach>
 	</table>
+
+<!--  	<script>
+	
+        document.addEventListener("DOMContentLoaded",()=> {
+     		const rows= document.querySelectAll("tr[data-href]");
+     		
+			rows.forEach(row=> {
+				row.addEventListener("click",()=>{
+					window.location.href=row.dataset.href;
+				});
+			});
+		});
+		
+	</script>
+	-->
 
 </body>
 </html>
