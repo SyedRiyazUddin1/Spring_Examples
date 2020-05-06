@@ -1,73 +1,50 @@
 package com.productregister.controllers;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.productregister.model.Product;
-import com.productregister.service.ProductService;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.productregister.model.User;
+import com.productregister.service.UserService;
+
 
 @Controller
 public class RegistrationController {
 
-	@Autowired
-	ProductService productService;
+  @Autowired
+  public UserService userService;
 
-	@RequestMapping("/register")
-	public String addProduct(@ModelAttribute("userReg") Product product) {
+  @RequestMapping(value = "/register", method = RequestMethod.GET)
+  public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
 
-		return "addProduct-page";
-	}
+    ModelAndView mav = new ModelAndView("register");
 
-	@RequestMapping("/registration-success")
-	public String processUserRegistration(@ModelAttribute("userReg") Product product) {
+    mav.addObject("user", new User());
 
-		productService.addProduct(product);
+    return mav;
 
-		return "registration-success";
-	}
+  }
 
+  @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
+  public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
 
-	@RequestMapping("/viewProducts-page")
-	public String viewProducts(Model model) {
-		List<Product> list = productService.getProducts();
-		model.addAttribute("list", list);
-		return "viewProducts-page";
+  @ModelAttribute("user") User user) {
+  userService.register(user);
 
-	}
-	
-	/* It displays object data into form for the given id.   
-     * The @PathVariable puts URL data into variable.*/  
-	
-	
-    @RequestMapping(value="/editProduct/{productId}")    
-    public String edit(@PathVariable int productId, Model model){    
-        Product product= productService.getProductById(productId);    
-        model.addAttribute("command",product);  
-        return "editProduct";    
-    }    
-	
-	  /* It updates model object. */    
-	@RequestMapping(value="/editProduct",method = RequestMethod.GET)    
-    public String editProduct(@ModelAttribute("product") Product product){    
-       productService.editProduct(product);   
-        return "redirect:/viewProducts-page";    
-    }
-	
-	
-	 /* It deletes record for the given id in URL and redirects to /viewProducts-page */    
-    @RequestMapping(value="/deleteProduct/{productId}",method = RequestMethod.GET)    
-    public String delete(@PathVariable int productId){    
-       productService.deleteProduct(productId);   
-        return "redirect:/viewProducts-page";    
-        
-        
-        
-    }
+  return new ModelAndView("welcome", "firstname", user.getFirstname());
+
+  }
+
 }

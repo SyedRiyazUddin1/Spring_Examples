@@ -18,6 +18,9 @@
 				<td></td>
 				<td><form:hidden path="productId" /></td>
 			</tr>
+			
+			
+			
 			<tr>
 				<td>Product Name :</td>
 				<td><form:input path="productName" /></td>
@@ -47,14 +50,46 @@
 			<tr>
 				<td>Final Price :</td>
 				<td><form:input path="finalPrice" /></td>
+
 			</tr>
-
-
+			
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Edit Save" /></td>
+
+				<td><input type="submit" value="Update Details" /></td>
 			</tr>
+
+			<tr>
+				<td><a
+					href="deleteProduct/${product.productId}">Delete
+						Product</a></td>
+			</tr>
+			
+			<!--  
+			<tr>
+				<td>
+					<button
+						onclick="/Product-Registration/deleteProduct/${product.productId}">Delete
+						Product</button>
+				</td>
+				
+				
+				
+				
+				<tr>
+				<td><a
+					href="/Product-Registration/deleteProduct/${product.productId}">Delete
+						Product</a></td>
+			</tr>
+			</tr> -->
+			
+		
+
 		</table>
+
+		<br />
+		<a href="/Product-Registration/index.jsp"> <-- Go back to HomePage</a>
+
 	</form:form>
 
 

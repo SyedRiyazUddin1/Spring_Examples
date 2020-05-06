@@ -9,9 +9,6 @@ public interface ProductDAO {
 	public int addProduct(Product product);
 
 	public List<Product> getProducts();
-	
-	
-//	public int saveOrUpdate(Product product);
 
 	public int editProduct(Product product);
 	

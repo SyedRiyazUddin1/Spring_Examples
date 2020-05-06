@@ -10,7 +10,8 @@
 </head>
 <body>
 
-
+<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
+		
 
 	<h1>Your product is added successfully !!</h1>
 
@@ -25,6 +26,7 @@
 	<br /> Features : ${userReg.features}
 	<br />
 	<br />
+	
 	
 	
 

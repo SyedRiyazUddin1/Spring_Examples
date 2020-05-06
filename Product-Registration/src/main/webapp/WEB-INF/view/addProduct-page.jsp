@@ -61,9 +61,12 @@
 		
 		<br />
 		<br />
-		<input type="submit" value="register">
+		<input type="submit" value="Add Product">
 		
 		</div>
+	
+	<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
+	
 		
 		
 
