@@ -17,12 +17,9 @@
 	<br />
 	<br />
 
-	<a href="/Product-Inventory/addProduct">Click here to add your
-		product</a>
 	<br />
-	<br />
-	<a href="/Product-Inventory/viewProducts-page"">Click here to
-		view your product</a>
+	<a href="/Product-Inventory/viewProducts-page"">Click here to Add/Edit
+		your product</a>
 
 </body>
 </html>

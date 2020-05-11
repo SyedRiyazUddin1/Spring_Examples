@@ -72,8 +72,17 @@ public class ProductController {
     public String delete(@PathVariable int productId){    
        productService.deleteProduct(productId);   
         return "redirect:/viewProducts-page";    
-        
-        
+ 
         
     }
+    
+    
+    /* It displays/fetch the updated database table without EDIT/DELETE option*/
+	@RequestMapping("/viewWithoutEdit")
+	public String viewWithoutEdit(Model model) {
+		List<Product> list = productService.getProducts();
+		model.addAttribute("list", list);
+		return "viewWithoutEdit";
+
+	}
 }

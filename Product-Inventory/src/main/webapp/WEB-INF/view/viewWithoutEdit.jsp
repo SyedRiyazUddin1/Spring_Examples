@@ -11,6 +11,7 @@
 </head>
 <body>
 
+
 	<br />
 	<a href="/Product-Inventory/index.jsp"> <-- Go back to HomePage</a>
 	<br />
@@ -25,7 +26,6 @@
 			<th>Country Name</th>
 			<th>Features</th>
 			<th>Product Final price</th>
-			<th>Delete product details</th>
 
 
 
@@ -34,33 +34,28 @@
 
 			<tr>
 				<td>${product.productName}</td>
-				<td><a
-					href="/Product-Inventory/editProduct/${product.productId }">
-						${product.productId }</a></td>
+				<td>${product.productId }</td>
 				<td>${product.price}</td>
 				<td>${product.productCompany}</td>
 				<td>${product.countryName}</td>
 				<td>${product.features}</td>
 				<td>${product.finalPrice}</td>
-				<td><a
-					href="/Product-Inventory/deleteProduct/${product.productId }">Delete</a>
-				</td>
+
 
 
 			</tr>
 		</c:forEach>
 	</table>
 
-	<br />
-	<br />
 
-	<h4>Note: *Click on the Product ID if you want to edit the Product
-		details</h4>
 	<br />
 	<br />
+	<br />
+	<a href="/Product-Inventory/login">Login to your Admin account to
+		Edit/Add products in the inventory</a>
 
-	<a href="/Product-Inventory/addProduct">Click here to add your
-		product</a>
+
+
 
 
 </body>

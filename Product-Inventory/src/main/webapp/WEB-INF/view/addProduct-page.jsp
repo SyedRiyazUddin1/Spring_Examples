@@ -65,7 +65,7 @@
 		
 		</div>
 	
-	<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
+	<br /> <a href="/Product-Inventory/index.jsp">   <-- Go back to HomePage</a> 
 	
 		
 		

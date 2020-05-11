@@ -2,6 +2,7 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 
-<br /> <a href="/Product-Registration/index.jsp">   <-- Go back to HomePage</a> 
+<br /> <a href="/Product-Inventory/index.jsp">   <-- Go back to HomePage</a> 
 		
 
 	<h1>Your product is added successfully !!</h1>
@@ -25,12 +26,7 @@
 	<br /> Country Name : ${userReg.countryName}
 	<br /> Features : ${userReg.features}
 	<br />
-	<br />
 	
-	
-	
-
-
 
 </body>
 </html>

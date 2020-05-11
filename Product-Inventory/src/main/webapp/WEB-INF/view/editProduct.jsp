@@ -12,7 +12,7 @@
 <body>
 
 	<h1>Edit Product details</h1>
-	<form:form method="GET" action="/Product-Registration/editProduct">
+	<form:form method="GET" action="/Product-Inventory/editProduct">
 		<table>
 			<tr>
 				<td></td>
@@ -61,34 +61,14 @@
 
 			<tr>
 				<td><a
-					href="deleteProduct/${product.productId}">Delete
-						Product</a></td>
+					href="deleteProduct/${product.productId}">${product.productId}</a></td>
 			</tr>
 			
-			<!--  
-			<tr>
-				<td>
-					<button
-						onclick="/Product-Registration/deleteProduct/${product.productId}">Delete
-						Product</button>
-				</td>
 				
-				
-				
-				
-				<tr>
-				<td><a
-					href="/Product-Registration/deleteProduct/${product.productId}">Delete
-						Product</a></td>
-			</tr>
-			</tr> -->
-			
-		
-
 		</table>
 
 		<br />
-		<a href="/Product-Registration/index.jsp"> <-- Go back to HomePage</a>
+		<a href="/Product-Inventory/index.jsp"> <-- Go back to HomePage</a>
 
 	</form:form>
 
