@@ -9,16 +9,6 @@ import com.springboot.service.ExternalService;
 
 @SpringBootApplication
 public class MySpringBootApp2Application {
-
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
-	
-	@Bean
-	public ExternalService getExternalService() {
-		return new ExternalService();
-	}
 	
 
 	public static void main(String[] args) {
