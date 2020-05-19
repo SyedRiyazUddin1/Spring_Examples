@@ -4,31 +4,60 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.myspringboot.model.Product;
+
 @Service
+@ConfigurationProperties(prefix = "endpoint")
 public class ExternalService {
+
+	private String url;
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
 	@Autowired
 	private RestTemplate restTemplate;
 
 	// get all the products
-	public List<Object> getProducts() {
+	public List<Product> getAllProducts() {
+		ResponseEntity<Product[]> response = restTemplate.getForEntity(url, Product[].class);
+		return Arrays.asList(response.getBody());
 
-		String url = "http://localhost:8090/products"; //no hard coding...have to move this in properties file 
-		Object[] objects = restTemplate.getForObject(url, Object[].class);
-
-		return Arrays.asList(objects);
 	}
 
-	public Object getProduct(String id) {
+	//get by Id
+	public Product getProductById(String id) {
+		ResponseEntity<Product> response = restTemplate.getForEntity(url + "/"+id, Product.class);
+		return response.getBody();
+	}
+
 	
-		String url = "http://localhost:8090/products/{id}";
-		Object[] object = restTemplate.getForObject(url, Object[].class);
-		return object;
+	//add product
+	public HttpStatus addProduct(Product product) {
+		ResponseEntity<HttpStatus> response = restTemplate.postForEntity(url, product, HttpStatus.class);
+		return response.getBody();
+	}
+
+	
+	//update product
+	public void updateProduct(Product product) {
+		restTemplate.put(url, product);
 	}
 	
-	
-	
+	//deletes product
+	public void deleteProduct(String id) {
+		restTemplate.delete(url + id);
+
+	}
 }

@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "endpoint",
+      "type": "com.springboot.service.ExternalService",
+      "sourceType": "com.springboot.service.ExternalService"
+    }
+  ],
+  "properties": [
+    {
+      "name": "endpoint.all-products",
+      "type": "java.util.List<com.myspringboot.model.Product>",
+      "sourceType": "com.springboot.service.ExternalService"
+    },
+    {
+      "name": "endpoint.url",
+      "type": "java.lang.String",
+      "description": "A description for 'endpoint.url'",
+      "sourceType": "com.springboot.service.ExternalService"
+    },
+    {
+      "name": "services",
+      "type": "java.lang.String",
+      "description": "A description for 'services'"
+    }
+  ],
+  "hints": []
+}
