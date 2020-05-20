@@ -8,5 +8,10 @@
     "name": "services",
     "type": "java.lang.String",
     "description": "A description for 'services'"
+  },
+  {
+    "name": "endpoint.url",
+    "type": "java.lang.String",
+    "description": "A description for 'endpoint.url'"
   }
 ]}

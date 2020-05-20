@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +14,10 @@ import org.springframework.web.client.RestTemplate;
 import com.myspringboot.model.Product;
 
 @Service
-@ConfigurationProperties(prefix = "endpoint")
+//@ConfigurationProperties(prefix = "endpoint")
 public class ExternalService {
-
+	
+    @Value("${endpoint.url}")
 	private String url;
 
 	public String getUrl() {

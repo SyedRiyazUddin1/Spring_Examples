@@ -23,7 +23,6 @@
 	
 
 
-
 		</tr>
 		<c:forEach var="product" items="${list}">
 
