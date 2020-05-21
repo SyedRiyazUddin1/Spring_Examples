@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -20,23 +20,29 @@
 			<th>Product ID</th>
 			<th>Product Name</th>
 			<th>Product's Description</th>
-	
+
 
 
 		</tr>
 		<c:forEach var="product" items="${list}">
 
 			<tr>
-				<td>${product.id}</td>
+				<td><a href="/myapp/editProduct/${product.id}">
+						${product.id }</a></td>
+				</td>
 				<td>${product.name}</td>
 				<td>${product.description}</td>
-				
+
+				<td><a
+					href="/myapp/deleteProduct/${product.id }">Delete</a>
+				</td>
+
 
 			</tr>
 		</c:forEach>
 	</table>
 
-	
+
 	<br />
 	<br />
 
