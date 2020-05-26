@@ -15,15 +15,16 @@ public class ServiceExceptionMapper implements ExceptionMapper<ServiceException>
 
 	@Override
 	public Response toResponse(ServiceException exception) {
-		ErrorMessage error = new ErrorMessage();
 
+		ErrorMessage error = new ErrorMessage();
 		error.setErrorCode(exception.getStatusCode());
 		error.setErrorMessage(exception.getMessage());
 
 		StringWriter writer = new StringWriter();
 		exception.printStackTrace(new PrintWriter(writer));
 
-		return Response.status(HttpStatus.INTERNAL_SERVER_ERROR.value()).entity(error).type(MediaType.APPLICATION_JSON).build();
+		return Response.status(HttpStatus.INTERNAL_SERVER_ERROR.value()).entity(error).type(MediaType.APPLICATION_JSON)
+				.build();
 	}
 
 }
