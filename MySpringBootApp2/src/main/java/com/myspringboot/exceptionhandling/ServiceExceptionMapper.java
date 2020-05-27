@@ -16,7 +16,7 @@ public class ServiceExceptionMapper implements ExceptionMapper<ServiceException>
 	@Override
 	public Response toResponse(ServiceException exception) {
 
-		ErrorMessage error = new ErrorMessage();
+		ErrorMessage error = new ErrorMessage(); 
 		error.setErrorCode(exception.getStatusCode());
 		error.setErrorMessage(exception.getMessage());
 

@@ -2,6 +2,8 @@ package com.myspringboot;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -18,6 +20,11 @@ public class AppConfig {
 	@Bean
 	public ExternalService getExternalService() {
 		return new ExternalService();
+	}
+	
+	@Bean
+	public PasswordEncoder getPasswordEncorder() {
+		return NoOpPasswordEncoder.getInstance();
 	}
 
 }

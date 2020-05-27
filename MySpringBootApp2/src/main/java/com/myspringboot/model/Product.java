@@ -5,15 +5,6 @@ public class Product {
 	private String id;
 	private String name;
 	private String description;
-//	private String url;
-//
-//	public String getUrl() {
-//		return url;
-//	}
-//
-//	public void setUrl(String url) {
-//		this.url = url;
-//	}
 
 	// no arg constructor so that the object is easier to initialize
 	public Product() {
