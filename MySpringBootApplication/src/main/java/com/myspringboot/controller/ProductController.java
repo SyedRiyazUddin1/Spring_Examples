@@ -2,8 +2,9 @@ package com.myspringboot.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myspringboot.model.Product;
-import com.myspringboot.service.ProductServiceImpl;
+import com.myspringboot.service.ProductService;
 
 @RestController
 public class ProductController {
 	
 	@Autowired
-	private ProductServiceImpl productService;
+	private ProductService productService;
 
 	
 	//gets all the products
@@ -26,6 +27,8 @@ public class ProductController {
 
 		return productService.getAllProducts();
 	}
+	
+	
 	
 	//fetch the product by id
 	@RequestMapping("/products/{id}")
@@ -59,4 +62,5 @@ public class ProductController {
 		 
 	}
 
+	
 }

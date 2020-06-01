@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import com.myspringboot.model.Product;
+import com.myspringboot.model.ProductRowMapper;
 
+@Repository
 public class ProductDaoImpl implements ProductDao {
 
 	@Autowired
