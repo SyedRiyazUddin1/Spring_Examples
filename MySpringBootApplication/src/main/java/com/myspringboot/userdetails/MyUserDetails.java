@@ -19,7 +19,7 @@ public class MyUserDetails implements UserDetails {
 	public MyUserDetails() {
 	}
 
-	//added the unimplemented methods
+	//added the unimplemented methods.
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
