@@ -7,35 +7,42 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.springboot.service.MyUserDetailsService;
+import com.springboot.filters.JwtRequestFilter;
+import com.springboot.util.JwtUtil;
 
 @EnableWebSecurity
 public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private MyUserDetailsService myUserDetailsService;
+	private UserDetailsService myUserDetailsService;
+	
+	@Autowired
+	private JwtRequestFilter jwtRequestFilter;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 		auth.userDetailsService(myUserDetailsService);
 	}
-	
-	
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-		.authorizeRequests().antMatchers("/authenticate").permitAll().
-				anyRequest().authenticated();
+		http.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().anyRequest().authenticated()
+		.and().exceptionHandling().
+		and().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 
 	@Override
 	@Bean
-	public AuthenticationManager authenticationManagerBean() throws Exception{
+	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
 
@@ -45,10 +52,12 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 
 	}
 	
-//	@Bean
-//	public JwtUtil getJwtTokenUtil() {
-//		return getJwtTokenUtil();
-//	}
+	
+	@Bean
+	public JwtUtil getJwtUtil() {
+		return new JwtUtil();
+	}
+	
 	
 
 }

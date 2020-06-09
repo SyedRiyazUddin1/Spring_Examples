@@ -6,7 +6,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springboot.models.AuthenticationRequest;
 import com.springboot.models.AuthenticationResponse;
+import com.springboot.service.MyUserDetailsService;
 import com.springboot.util.JwtUtil;
 
 @Controller
@@ -26,9 +26,9 @@ public class HelloResource {
 	private JwtUtil jwtTokenUtil;
 
 	@Autowired
-	private UserDetailsService userDetailsService;
+	private MyUserDetailsService userDetailsService;
 
-	@RequestMapping("/hello")
+	@RequestMapping({"/hello"})
 	public String hello() {
 		return "Hello World";
 	}
