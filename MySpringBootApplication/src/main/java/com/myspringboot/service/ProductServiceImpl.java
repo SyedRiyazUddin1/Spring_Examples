@@ -14,7 +14,7 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductDao productDao;
 
-	// gets all the products
+	// gets all the products.
 	@Override
 	public List<Product> getAllProducts() {
 		return productDao.getAllProducts();
