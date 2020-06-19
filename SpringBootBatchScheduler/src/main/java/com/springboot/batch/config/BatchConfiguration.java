@@ -93,7 +93,7 @@ public class BatchConfiguration {
 	}
 
 	/**
-	 * Steps ate wrapped up with reader, processor and writer the below step writes
+	 *  Steps ate wrapped up with reader, processor and writer the below step writes
 	 * 10 records at a time
 	 */
 	@Bean

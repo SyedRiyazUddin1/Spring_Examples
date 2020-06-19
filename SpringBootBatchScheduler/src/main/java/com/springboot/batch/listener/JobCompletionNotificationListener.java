@@ -16,8 +16,7 @@ import org.springframework.stereotype.Component;
 
 import com.springboot.batch.model.Person;
 
-
-
+//
 @Component
 public class JobCompletionNotificationListener extends JobExecutionListenerSupport {
 
