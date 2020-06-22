@@ -26,8 +26,9 @@ import com.springboot.batch.processor.PersonItemProcessor;
 /**
  * EnableBatchProcessing annotation enable Spring Batch features and provide a
  * base configuration for setting up batch jobs in an @Configuration class,
- * roughly equivalent to using the <batch:*> XML namespace. This annotation adds
- * several critical beans that supports jobs
+ * roughly equivalent to using the <batch:*> XML namespace
+ * This annotation adds
+ * several critical beans that supports jobs.
  */
 @Configuration
 @EnableBatchProcessing
