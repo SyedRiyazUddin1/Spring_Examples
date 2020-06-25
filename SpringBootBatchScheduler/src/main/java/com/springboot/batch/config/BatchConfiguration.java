@@ -28,7 +28,7 @@ import com.springboot.batch.processor.PersonItemProcessor;
  * base configuration for setting up batch jobs in an @Configuration class,
  * roughly equivalent to using the <batch:*> XML namespace
  * This annotation adds
- * several critical beans that supports jobs.
+ * several critical beans that supports jobs
  */
 @Configuration
 @EnableBatchProcessing
@@ -75,7 +75,7 @@ public class BatchConfiguration {
 
 	/**
 	 * the below one aimed at JDBC destination and auto gets the copy of dataSource
-	 * and it includes the SQL statement needed to insert a single person info
+	 * and it includes the SQL statement needed to insert a single person info.
 	 */
 	@Bean
 	public JdbcBatchItemWriter<Person> writer() {
@@ -94,7 +94,7 @@ public class BatchConfiguration {
 	}
 
 	/**
-	 *  Steps ate wrapped up with reader, processor and writer the below step writes
+	 *  Steps are wrapped up with reader, processor and writer the below step writes
 	 * 10 records at a time
 	 */
 	@Bean
