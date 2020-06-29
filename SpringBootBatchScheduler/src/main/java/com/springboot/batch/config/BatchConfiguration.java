@@ -75,7 +75,7 @@ public class BatchConfiguration {
 
 	/**
 	 * the below one aimed at JDBC destination and auto gets the copy of dataSource
-	 * and it includes the SQL statement needed to insert a single person info.
+	 * and it includes the SQL statement needed to insert a single person info..
 	 */
 	@Bean
 	public JdbcBatchItemWriter<Person> writer() {
