@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springbatch.demo.runner.JobRunner;
 
 /*
-url: http://localhost:8080/run/job
+
+Note: when we run this application, only empty table will get created. 
+When we hit the below URL, job will triggered and the data will be persisted in the DB
+Url: http://localhost:8080/run/job
  */
 
 @RestController
@@ -25,5 +28,11 @@ public class JobController {
 	public String runJob() {
 		jobRunner.runBatchJob();
 		return String.format("Job Demo1 submitted successfully.");
+
+		/*
+		 * we have used the annotation @Async in the JobRunner which means that the
+		 * above method will return the message meanwhile the job will run in the
+		 * background. This is useful when we have thousands of records.
+		 */
 	}
 }

@@ -6,6 +6,10 @@ import org.springframework.stereotype.Component;
 import com.springbatch.demo.dto.EmployeeDTO;
 import com.springbatch.demo.model.Employee;
 
+/**
+ * In this class, we are reading the data from a file and converting it into
+ * EmployeeDTO object
+ */
 @Component
 public class EmployeeProcessor implements ItemProcessor<EmployeeDTO, Employee> {
 
@@ -18,6 +22,6 @@ public class EmployeeProcessor implements ItemProcessor<EmployeeDTO, Employee> {
 		employee.setEmail(employeeDTO.getEmail());
 		employee.setAge(employeeDTO.getAge());
 		System.out.println("inside processor " + employee.toString());
-		return employee;
+		return employee; //this employee will the input to writer now
 	}
 }

@@ -1,6 +1,7 @@
 package com.springbatch.demo.runner;
 
 import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Component;
 import com.springbatch.demo.utils.Constants;
 
 import java.util.Date;
+
+//this class is to trigger our job
 
 @Component
 public class JobRunner {
@@ -29,7 +32,8 @@ public class JobRunner {
 		this.demo1 = demo1;
 	}
 
-	@Async
+	//we have not provided any file name in the reader part and here we are providing the filename in the run time
+	@Async //
 	public void runBatchJob() {
 		JobParametersBuilder jobParametersBuilder = new JobParametersBuilder();
 		jobParametersBuilder.addString(Constants.FILE_NAME_CONTEXT_KEY, "employees.csv");

@@ -6,6 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableBatchProcessing
+/*
+ * @EnableBatchProcessing annotation enables Spring Batch features and provide a
+ * base configuration for setting up batch jobs in an @Configurationclass,
+ * roughly equivalent to using the <batch:*> XML namespace.
+ */
 public class SpringBatchBrushupApplication {
 
 	public static void main(String[] args) {

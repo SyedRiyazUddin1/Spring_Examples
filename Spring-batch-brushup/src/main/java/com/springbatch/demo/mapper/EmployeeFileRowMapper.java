@@ -7,6 +7,7 @@ import com.springbatch.demo.dto.EmployeeDTO;
 
 public class EmployeeFileRowMapper implements FieldSetMapper<EmployeeDTO> {
 
+	//overriding mapFieldSet method and setting our mapping logic
 	@Override
 	public EmployeeDTO mapFieldSet(FieldSet fieldSet) {
 		EmployeeDTO employee = new EmployeeDTO();
