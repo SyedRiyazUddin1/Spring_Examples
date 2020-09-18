@@ -8,7 +8,7 @@
 <title>Login Form</title>
 </head>
 <body>
-	<form action="login_success.jsp" method="get">
+	<form action="LoginServlet" method="post">
 		<table style="with: 50%">
 
 			<tr>

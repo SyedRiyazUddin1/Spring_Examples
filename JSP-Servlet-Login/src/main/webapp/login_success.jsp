@@ -23,7 +23,9 @@
 		<tr>
 			<td></td>
 			<td></td>
-			<td><a href="studentDetails.jsp"><b>Get Student Details</b></a></td>
+			<strong><a href="<%=request.getContextPath()%>/LoginServlet?type=getDetails">Show Student Details</a></strong>
+<br></br>
+
 		</tr>
 	</table>
 </body>

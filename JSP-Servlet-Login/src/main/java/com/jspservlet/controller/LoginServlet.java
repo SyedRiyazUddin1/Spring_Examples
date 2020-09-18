@@ -22,19 +22,19 @@ public class LoginServlet extends HttpServlet {
 			// TODO Auto-generated constructor stub
 		}
 
-		protected void doPost(HttpServletRequest request, HttpServletResponse response)
-				throws ServletException, IOException {
-			// TODO Auto-generated method stub
-			String username = request.getParameter("username");
-			String password = request.getParameter("password");
-			if (username.isEmpty() || password.isEmpty()) {
-				RequestDispatcher req = request.getRequestDispatcher("error.jsp");
-				req.include(request, response);
-			} else {
-				RequestDispatcher req = request.getRequestDispatcher("login_sucess.jsp");
-				req.forward(request, response);
-			}
-		}
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	        String un = request.getParameter("username");
+	        String pw = request.getParameter("password");
+
+	        if (un.equals("admin") && pw.equals("admin")) {
+	            response.sendRedirect("login_success.jsp");
+	            return;
+	        } else {
+	            response.sendRedirect("error.jsp");
+	            return;
+	        }
+	    }
+
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
@@ -48,9 +48,9 @@ public class LoginServlet extends HttpServlet {
 
 				stuDetails.getStudentDetails();
 
-				request.setAttribute("stuList", stuDetails.getStudentDetails());
+				request.setAttribute("StuList", stuDetails.getStudentDetails());
 
-				request.getRequestDispatcher("student_details.jsp").forward(request, response);
+				request.getRequestDispatcher("studentDetails.jsp").forward(request, response);
 			}
 		}
 
